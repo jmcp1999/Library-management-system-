@@ -57,3 +57,16 @@ public class LibraryManagementSystem {
                         booksByAuthor.forEach(System.out::println);
                     }
                     break;
+
+                    case 4:
+                    System.out.print("Enter genre to search: ");
+                    genre = scanner.nextLine();
+                    List<Book> booksByGenre = library.searchByGenre(genre);
+                    if (booksByGenre.isEmpty()) {
+                        System.out.println("No books found with genre: " + genre);
+                    } else {
+                        booksByGenre.forEach(System.out::println);
+                    }
+                    break;
+
+    
