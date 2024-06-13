@@ -23,3 +23,14 @@ public class LibraryManagementSystem {
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter book title: ");
+                    String title = scanner.nextLine();
+                    System.out.print("Enter book author: ");
+                    String author = scanner.nextLine();
+                    System.out.print("Enter book genre: ");
+                    String genre = scanner.nextLine();
+                    admin.addBook(library, new Book(title, author, genre));
+                    break;
