@@ -34,3 +34,14 @@ public class LibraryManagementSystem {
                     String genre = scanner.nextLine();
                     admin.addBook(library, new Book(title, author, genre));
                     break;
+
+                    case 2:
+                    System.out.print("Enter book title to search: ");
+                    title = scanner.nextLine();
+                    List<Book> booksByTitle = library.searchByTitle(title);
+                    if (booksByTitle.isEmpty()) {
+                        System.out.println("No books found with title: " + title);
+                    } else {
+                        booksByTitle.forEach(System.out::println);
+                    }
+                    break;
