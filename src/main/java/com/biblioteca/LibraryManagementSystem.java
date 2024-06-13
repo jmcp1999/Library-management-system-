@@ -105,4 +105,13 @@ public class LibraryManagementSystem {
                     }
                     break;
 
-    
+                    case 7:
+                    running = false;
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+        scanner.close();
+    }
+}
