@@ -87,4 +87,22 @@ public class LibraryManagementSystem {
                     }
                     break;
 
+                    case 6:
+                    System.out.print("Enter your name: ");
+                    userName = scanner.nextLine();
+                    user = library.findUser(userName);
+                    if (user == null) {
+                        System.out.println("User not found.");
+                        break;
+                    }
+                    System.out.print("Enter book title to return: ");
+                    title = scanner.nextLine();
+                    List<Book> booksToReturn = library.searchByTitle(title);
+                    if (booksToReturn.isEmpty()) {
+                        System.out.println("No books found with title: " + title);
+                    } else {
+                        user.returnBook(booksToReturn.get(0));
+                    }
+                    break;
+
     
