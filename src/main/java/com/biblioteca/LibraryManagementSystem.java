@@ -69,4 +69,22 @@ public class LibraryManagementSystem {
                     }
                     break;
 
+                    case 5:
+                    System.out.print("Enter your name: ");
+                    String userName = scanner.nextLine();
+                    User user = library.findUser(userName);
+                    if (user == null) {
+                        user = new User(userName);
+                        library.addUser(user);
+                    }
+                    System.out.print("Enter book title to borrow: ");
+                    title = scanner.nextLine();
+                    List<Book> booksToBorrow = library.searchByTitle(title);
+                    if (booksToBorrow.isEmpty()) {
+                        System.out.println("No books found with title: " + title);
+                    } else {
+                        user.borrowBook(booksToBorrow.get(0));
+                    }
+                    break;
+
     
