@@ -45,3 +45,15 @@ public class LibraryManagementSystem {
                         booksByTitle.forEach(System.out::println);
                     }
                     break;
+  
+                    
+                    case 3:
+                    System.out.print("Enter author to search: ");
+                    author = scanner.nextLine();
+                    List<Book> booksByAuthor = library.searchByAuthor(author);
+                    if (booksByAuthor.isEmpty()) {
+                        System.out.println("No books found by author: " + author);
+                    } else {
+                        booksByAuthor.forEach(System.out::println);
+                    }
+                    break;
